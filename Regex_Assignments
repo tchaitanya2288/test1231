@@ -1,0 +1,57 @@
+1. Write a program to check a non-special characters, using function.
+
+While calling the function give the input as 
+
+Scenario-1 : 
+"ABCDEFabcdef123450"
+
+Scenario-2 : 
+"*&%@#!}{"
+
+#--------------------------------------------------------------#
+2. Create a python program using functions and find a character in a pattern.
+
+Scenario-1 : 
+"ac"
+
+Scenario-2 : 
+"abc"
+
+#--------------------------------------------------------------#
+3. Create a python program using functions and find an character in a pattern, followed by three "k"
+
+
+Scenario-1 : 
+"ak"
+
+Scenario-2 : 
+"akkkkc"
+
+#--------------------------------------------------------------#
+4. Create a python program using functions, find sequences of lowercase letters joined with a special character i.e. _ 
+
+Scenario-1 : 
+"akk_csdrtbc"
+
+Scenario-2 : 
+"ksb_Lfbbc"
+
+Scenario-3 : 
+"ojk_ppbc"
+
+
+
+#--------------------------------------------------------------#
+5. Write a python program using python functions, to remove leading zeros from an IPV4 ipaddress.
+
+
+Scenario-1 : 
+"10.20.31.005"
+
+Scenario-2 : 
+"172.01.05.009"
+
+Scenario-3 : 
+"192.168.001.010"
+
+#--------------------------------------------------------------#
