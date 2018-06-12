@@ -1,0 +1,14 @@
+#!/usr/bin/python
+
+name = input("What is your Name : ")
+
+print ("Your name is : ", name)
+
+age = int(input("Enter your age: "))
+
+print("Your age is",age)
+
+
+print(type(name),id(name))
+
+print(type(age),id(age))
