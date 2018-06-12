@@ -1,0 +1,21 @@
+#!/usr/bin/python
+
+class Human:
+    def __init__(self, n, o):
+        self.name = n         # Properties of Human Class
+        self.occupation = o   # Properties of Human Class
+    def do_work(self):     # Method of class
+        if self.occupation == "singer":
+            print(self.name,"Sings songs")
+        elif self.occupation == "actor":
+            print(self.name,"Acts in Films")
+    def speaks(self):      # Method of class
+        print(self.name,"Says how are you?")
+
+abiel = Human("vin diesel","actor")
+abiel.do_work()
+abiel.speaks()
+
+enrique = Human("Enrique Abiel","singer")
+enrique.do_work()
+enrique.speaks()
