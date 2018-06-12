@@ -1,0 +1,23 @@
+# Python|Strings|Assignments-I
+
+1. That accepts a comma separated sequence of words as input 
+and prints the unique words in sorted form (alphanumerically).
+
+Example:
+
+2. To check whether a string starts with specified characters.
+
+Example:
+
+3. To count occurrences of a substring in a string.
+
+Example:
+
+4. Lowercase first n characters in a string.
+
+Example:
+
+5. Get the last part of a string before a specified character
+
+Example:
+
