@@ -1,0 +1,44 @@
+
+1. Object
+
+2. Class
+
+3. Method
+
+4. Inheritance
+
+5. Polymorphism
+
+6. Data Abstraction
+
+7. Encapsulation
+
+#------------------------------------------#
+1. Object : For example Mouse, Keyboard, chair 
+
+Everything in python is an object 
+
+Attributes & Methods
+
+Functions have a build-in attributes __doc__
+
+doc string defined in the function source code
+
+#------------------------------------------#
+2. Class : Class can be defined as a collection of objects.
+
+It is a logical entity that has some specific attributes and methods
+
+employee 
+
+An attribute & method i.e. Name, Age, Salary, Email_id
+
+#------------------------------------------#
+
+python -m pdb <file_name>.py
+
+Python Interactive Debugger 'pdb'
+
+
+
+
