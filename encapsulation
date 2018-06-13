@@ -1,0 +1,117 @@
+
+
+Encapsulation
+
+In an object oriented python program, you can restrict access to methods and variables. This can prevent the data from being modified by accident and is known as encapsulation. 
+
+Private methods :
+
+We create a class Car which has two methods:  drive() and updateSoftware(). 
+
+When a car object is created, it will call the private methods __updateSoftware(). 
+
+#!/usr/bin/env python
+ 
+class Car:
+ 
+    def __init__(self):
+        self.__updateSoftware()
+ 
+    def drive(self):
+        print 'driving'
+ 
+    def __updateSoftware(self):
+        print 'updating software'
+ 
+Smallcar = Car()
+Smallcar.drive()
+#Smallcar.__updateSoftware()  not accesible from object.
+
+
+This program will output:
+
+updating software
+driving
+
+
+Encapsulation prevents from accessing accidentally, but not intentionally.
+
+The private attributes and methods are not really hidden, they’re renamed adding “_Car” in the beginning of their name.
+
+The method can actually be called using Smallcar._Car__updateSoftware()
+
+
+
+Private variables :
+
+Variables can be private which can be useful on many occasions. 
+A private variable can only be changed within a class method and not outside of the class.
+
+
+Objects can hold crucial data for your application and you do not want that data to be changeable from anywhere in the code.
+
+
+#!/usr/bin/env python
+ 
+class Car:
+ 
+    __maxspeed = 0
+    __name = ""
+ 
+    def __init__(self):
+        self.__maxspeed = 200
+        self.__name = "Supercar"
+ 
+    def drive(self):
+        print 'driving. maxspeed ' + str(self.__maxspeed)
+ 
+Smallcar = Car()
+Smallcar.drive()
+Smallcar.__maxspeed = 10  # will not change variable because its private
+Smallcar.drive()
+
+
+If you want to change the value of a private variable, a setter method is used.  This is simply a method that sets the value of a private variable.
+
+#!/usr/bin/env python
+ 
+class Car:
+ 
+    __maxspeed = 0
+    __name = ""
+ 
+    def __init__(self):
+        self.__maxspeed = 200
+        self.__name = "Supercar"
+ 
+    def drive(self):
+        print 'driving. maxspeed ' + str(self.__maxspeed)
+ 
+    def setMaxSpeed(self,speed):
+        self.__maxspeed = speed
+ 
+Smallcar = Car()
+Smallcar.drive()
+Smallcar.setMaxSpeed(320)
+Smallcar.drive()
+
+
+Why would you create them? Because some of the private values you may want to change after creation of the object while others may not need to be changed at all.
+
+Python Encapsulation
+To summarize, in Python there are:
+
+Type				Description
+public methods		Accessible from anywhere
+private methods		Accessible only in their own class. starts with two underscores
+public variables	Accessible from anywhere
+private variables	Accesible only in their own class or by a method if defined. 
+					starts with two underscores
+					
+Other programming languages have protected class methods too, but Python does not.
+
+Encapsulation gives you more control over the degree of coupling in your code, it allows a class to change its implementation without affecting other parts of the code.
+
+
+
+
