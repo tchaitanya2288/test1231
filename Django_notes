@@ -1,0 +1,248 @@
+
+Django  = webframework 
+
+Webapplications = Websites
+
+Step-1 : Download, Install & Configure 
+
+# Python 
+
+# pip 
+
+# django 
+
+$ python --version
+Python 3.6.0 :: Anaconda custom (x86_64)
+ 
+$ pip --version
+pip 10.0.1 from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pip (python 3.6)
+ 
+$ python -m django --version
+1.11.5
+
+$ django-admin
+
+Type 'django-admin help <subcommand>' for help on a specific subcommand.
+
+Available subcommands:
+
+[django]
+    check
+    compilemessages
+    createcachetable
+    dbshell
+    diffsettings
+    dumpdata
+    flush
+    inspectdb
+    loaddata
+    makemessages
+    makemigrations
+    migrate
+    runserver
+    sendtestemail
+    shell
+    showmigrations
+    sqlflush
+    sqlmigrate
+    sqlsequencereset
+    squashmigrations
+    startapp
+    startproject
+    test
+    testserver
+
+Step-2 : Create a Project 
+
+$ django-admin startproject mysite
+
+$ ls -ld mysite
+drwxr-xr-x  4 keshavkummari  staff  136 Jun  9 06:23 mysite
+
+$ ls -lrt mysite
+drwxr-xr-x  6 keshavkummari  staff  204 Jun  9 06:23 mysite
+-rwxr-xr-x  1 keshavkummari  staff  804 Jun  9 06:23 manage.py
+
+$ ls -lrt mysite/mysite/
+-rw-r--r--  1 keshavkummari  staff   390 Jun  9 06:23 wsgi.py
+-rw-r--r--  1 keshavkummari  staff   763 Jun  9 06:23 urls.py
+-rw-r--r--  1 keshavkummari  staff  3096 Jun  9 06:23 settings.py
+-rw-r--r--  1 keshavkummari  staff     0 Jun  9 06:23 __init__.py
+
+
+$ # mysite = Root directory is just a container for your project. 
+$ 
+$ # mysite/mysite = Directory is the actual python package for your project.  
+$ 
+$ # manage.py = A commandline utiltiy 
+$ 
+$ # mysite/__init__.py = An empty; Python Package
+$ 
+$ # mysite/settings.py = Configuration for this django project 
+$ 
+$ # mysite/urls.py = The URL declarations for this django project 
+$ 
+$ # mysite/wsgi.py = An entry-point for WSGI-compatible Webservers to server your project 
+
+Step-3 : Run Development Server :
+
+$ pwd
+/Users/keshavkummari
+$ 
+$ cd mysite
+$ pwd
+/Users/keshavkummari/mysite
+$ ls -lrt 
+total 8
+drwxr-xr-x  6 keshavkummari  staff  204 Jun  9 06:23 mysite
+-rwxr-xr-x  1 keshavkummari  staff  804 Jun  9 06:23 manage.py
+$ 
+$ python manage.py runserver
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 13 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+
+June 09, 2018 - 01:04:43
+Django version 1.11.5, using settings 'mysite.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+[09/Jun/2018 01:05:34] "GET / HTTP/1.1" 200 1716
+Not Found: /favicon.ico
+[09/Jun/2018 01:05:35] "GET /favicon.ico HTTP/1.1" 404 1962
+
+
+$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying sessions.0001_initial... OK
+
+Step-4 : To change the webserver port :
+
+$ python manage.py runserver 8080
+
+$ python manage.py runserver 0:8000
+
+$ python manage.py runserver 0.0.0.0:8000
+
+
+$ python manage.py startapp home
+
+$ ls -lrt home/
+total 40
+-rw-r--r--  1 keshavkummari  staff   63 Jun  9 06:40 views.py
+-rw-r--r--  1 keshavkummari  staff   60 Jun  9 06:40 tests.py
+-rw-r--r--  1 keshavkummari  staff   57 Jun  9 06:40 models.py
+drwxr-xr-x  3 keshavkummari  staff  102 Jun  9 06:40 migrations
+-rw-r--r--  1 keshavkummari  staff   83 Jun  9 06:40 apps.py
+-rw-r--r--  1 keshavkummari  staff   63 Jun  9 06:40 admin.py
+-rw-r--r--  1 keshavkummari  staff    0 Jun  9 06:40 __init__.py
+
+
+Step-5 : Creating Admin user for project :
+
+$ pwd
+/Users/keshavkummari/mysite
+
+$ python manage.py createsuperuser 
+Username (leave blank to use 'keshavkummari'): 
+Email address: keshav.kummari@gmail.com
+Password: 
+Password (again): 
+Superuser created successfully.
+
+http://127.0.0.1:8000/admin/login/?next=/admin/
+
+
+
+Step-6 : Creating a App :
+
+$ pwd
+/Users/keshavkummari/mysite
+$ python manage.py startapp aboutus
+$ ls -lrt
+total 264
+-rwxr-xr-x   1 keshavkummari  staff     804 Jun  9 06:23 manage.py
+drwxr-xr-x   7 keshavkummari  staff     238 Jun  9 06:50 mysite
+drwxr-xr-x  11 keshavkummari  staff     374 Jun  9 06:54 home
+-rw-r--r--   1 keshavkummari  staff  131072 Jun  9 07:03 db.sqlite3
+drwxr-xr-x   9 keshavkummari  staff     306 Jun  9 07:03 aboutus
+
+
+
+$ pip install pybuilder
+Requirement already satisfied: pybuilder in /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages (0.11.17)
+Requirement already satisfied: wheel~=0.31 in /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages (from pybuilder) (0.31.1)
+Requirement already satisfied: tblib in /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages (from pybuilder) (1.3.2)
+Requirement already satisfied: setuptools~=39.0.0 in /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages (from pybuilder) (39.0.1)
+Requirement already satisfied: pip<11dev,>=7.1 in /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages (from pybuilder) (10.0.1)
+Requirement already satisfied: tailer in /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages (from pybuilder) (0.4.1)
+docker 2.7.0 has requirement requests!=2.18.0,>=2.14.2, but you'll have requests 2.5.1 which is incompatible.
+$ pyb --start-project
+Project name (default: 'mysite') : 
+Source directory (default: 'src/main/python') : 
+Docs directory (default: 'docs') : 
+Unittest directory (default: 'src/unittest/python') : 
+Scripts directory (default: 'src/main/scripts') : 
+Use plugin python.flake8 (Y/n)? (default: 'y') : y
+Use plugin python.coverage (Y/n)? (default: 'y') : y
+Use plugin python.distutils (Y/n)? (default: 'y') : y
+
+Created 'setup.py'.
+$ ls -lrt setup.py 
+-rw-r--r--  1 keshavkummari  staff  2355 Jun  9 07:13 setup.py
+$ pyb install_dependencies publish
+PyBuilder version 0.11.17
+Build started at 2018-06-09 07:13:36
+------------------------------------------------------------
+[INFO]  Building mysite version 1.0.dev0
+[INFO]  Executing build in /Users/keshavkummari/mysite
+[INFO]  Going to execute tasks: install_dependencies, publish
+[INFO]  Installing all dependencies
+[INFO]  Installing plugin dependency coverage
+[INFO]  Installing plugin dependency flake8
+[INFO]  Installing plugin dependency pypandoc
+[INFO]  Installing plugin dependency unittest-xml-reporting
+[INFO]  Running unit tests
+[INFO]  Executing unit tests from Python modules in /Users/keshavkummari/mysite/src/unittest/python
+[WARN]  No unit tests executed.
+[INFO]  All unit tests passed.
+[INFO]  Building distribution in /Users/keshavkummari/mysite/target/dist/mysite-1.0.dev0
+[INFO]  Copying scripts to /Users/keshavkummari/mysite/target/dist/mysite-1.0.dev0/scripts
+[INFO]  Writing setup.py as /Users/keshavkummari/mysite/target/dist/mysite-1.0.dev0/setup.py
+[INFO]  Collecting coverage information
+[WARN]  coverage_branch_threshold_warn is 0 and branch coverage will not be checked
+[WARN]  coverage_branch_partial_threshold_warn is 0 and partial branch coverage will not be checked
+[INFO]  Running unit tests
+[INFO]  Executing unit tests from Python modules in /Users/keshavkummari/mysite/src/unittest/python
+[WARN]  No unit tests executed.
+[INFO]  All unit tests passed.
+Coverage.py warning: No data was collected. (no-data-collected)
+[INFO]  Overall coverage is 100%
+[INFO]  Overall coverage branch coverage is 100%
+[INFO]  Overall coverage partial branch coverage is 100%
+------------------------------------------------------------
+BUILD FAILED - No data to report.
+------------------------------------------------------------
+Build finished at 2018-06-09 07:13:57
+Build took 20 seconds (20760 ms)
+
+
+
+
+
