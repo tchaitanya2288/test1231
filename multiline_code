@@ -1,0 +1,26 @@
+#/usr/bin/python
+
+highScore = """score + currentScore + pastScore \
+ + futureScore + credit + bonus + \
+creditinfo + random"""
+
+Os_Details ='''unix + linux + windows 
++ shell + perl + python 
+c + java'''
+
+some = [ 1, 2, 3, 3,
+            4, 5, 66]
+
+print (highScore,type(highScore))
+print(Os_Details,type(Os_Details))
+print (some,type(some))
+
+"""
+# Below code will not work becuase we are using " quotes for multiline variables
+highScore = "score + currentScore + pastScore\
+ + futureScore + credit + bonus + \
+creditinfo + random"
+Os_Details ='unix + linux + windows 
++ shell + perl + python + 
+c + java'
+"""
